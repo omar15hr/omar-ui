@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import { Asap, Inter } from "next/font/google";
 import "./globals.css";
+import { FloatNav } from "./components/floatNav";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  display: "swap",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const asap = Asap({
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-asap",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +27,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`bg-light-50 dark:bg-dark-50 antialiased transition-colors ${asap.variable} ${inter.className}`}
       >
-        {children}
+        <ThemeProvider attribute="class">
+          <FloatNav />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
