@@ -30,9 +30,9 @@ export function Hero() {
 
       <p className="text-light-700 dark:text-dark-900 mt-6 max-w-2xl text-center text-xl transition">
         A collection of{" "}
-        <span className="line-through decoration-green-500">awesome</span> test
-        components
-        <br /> with smooth animations
+        <span className="line-through decoration-green-500">awesome</span> 
+        {" "}components
+        <br /> with cool animations
       </p>
       <div className="mt-10 flex gap-4">
         <Link

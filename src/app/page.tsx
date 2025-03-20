@@ -1,4 +1,6 @@
+import { ComponentsSlideshow } from "./components/landing/components-slideshow";
 import Divider from "./components/landing/divider";
+import { Features } from "./components/landing/features";
 import { Hero } from "./components/landing/hero";
 
 export default function Home() {
@@ -7,6 +9,8 @@ export default function Home() {
       <Divider orientation="vertical" />
       <Divider orientation="vertical" className="right-auto left-0" />
       <Hero />
+      <Features />
+      <ComponentsSlideshow />
     </main>
   );
 }
