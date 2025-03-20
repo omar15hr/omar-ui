@@ -7,7 +7,7 @@ interface LinkedinIconProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
 }
 
-export const LinkedinIcon: React.FC<LinkedinIconProps> = () => (
+export const LinkedinIcon: React.FC<LinkedinIconProps> = ({ className }) => (
   <svg
     width="20"
     height="20"
@@ -69,7 +69,10 @@ interface GithubIconProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
 }
 
-export const GithubIcon: React.FC<GithubIconProps> = ({ ...props }) => (
+export const GithubIcon: React.FC<GithubIconProps> = ({
+  className,
+  ...props
+}) => (
   <svg
     viewBox="0 0 256 250"
     width="1em"

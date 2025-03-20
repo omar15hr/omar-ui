@@ -30,7 +30,7 @@ const BOUNCE_VARIANTS = {
 } as const
 
 const variants = {
-  exit: (transition: any) => ({
+  exit: (transition: { [key: string]: any }) => ({
     ...transition,
     opacity: [1, 0],
     filter: "blur(5px)",

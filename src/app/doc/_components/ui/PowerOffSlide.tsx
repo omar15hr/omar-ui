@@ -7,7 +7,6 @@ import {
   useAnimation,
   useAnimationFrame,
   useMotionValue,
-  useTransform,
 } from "motion/react"
 
 export default function PowerOffSlide() {

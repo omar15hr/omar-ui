@@ -6,7 +6,6 @@ import { AnimatePresence, motion } from "motion/react";
 
 import type { ComponentsProps } from "@/app/doc/data/components";
 import { cn } from "@/app/utils/cn";
-import { copyToClipboard } from "../utils/copyToClipboard";
 
 interface FrameProps {
   component: ComponentsProps;
