@@ -9,7 +9,7 @@ import Frame from "../frame";
 const SHOWCASE_COMPONENTS = [
   "Animated Tags",
   "Social Selector",
-  "Power Off Slide",
+  "Job Listing Component",
   "Expandable Cards",
   "User Account Avatar",
   "Number Flow",

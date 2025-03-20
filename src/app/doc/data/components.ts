@@ -11,8 +11,8 @@ import NumberFlow from "@/app/doc/_components/ui/NumberFlow"
 import PowerOffSlide from "@/app/doc/_components/ui/PowerOffSlide"
 import SocialSelector from "@/app/doc/_components/ui/SocialSelector"
 import UserAccountAvatar from "@/app/doc/_components/ui/UserAccountAvatar"
-import FluidMorph from "../_components/ui/FluidMoprh"
-import ExpandableCards from "../_components/ui/ExpandableCard"
+import FluidMorph from "../_components/ui/FluidMorph"
+import ExpandableCards from "../_components/ui/ExpandableCards"
 
 export interface ComponentsProps {
   id: number
