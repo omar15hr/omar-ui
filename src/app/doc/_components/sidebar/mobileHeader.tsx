@@ -12,7 +12,7 @@ export function MobileHeader({ onOpenSidebar }: MobileHeaderProps) {
   return (
     <div className="bg-light-50/50 dark:bg-dark-50/50 fixed top-0 right-0 left-0 z-30 flex items-center justify-between px-4 py-3 backdrop-blur-md lg:hidden">
       <Link href="/">
-        <Image src={logo} alt="Logo SmoothUI" width={32} height={32} />
+        <Image src={logo} alt="Logo SmoothUI" width={52} height={52} />
       </Link>
       <button
         onClick={onOpenSidebar}

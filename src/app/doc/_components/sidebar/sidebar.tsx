@@ -7,7 +7,7 @@ import { X } from "lucide-react"
 
 import { components, ComponentsProps } from "@/app/doc/data/components"
 
-import Logo from "./../../../../../../public/logo.png"
+import Logo from "../../../../../public/logo.png"
 import { MobileHeader } from "./mobileHeader"
 import BadgeBeta from "../badgeBeta"
 import { SidebarButton } from "./sidebarButton"
@@ -36,7 +36,7 @@ export function Sidebar() {
           {!isSidebarOpen && (
             <div className="flex flex-row items-center gap-4">
               <Link href="/">
-                <Image src={Logo} alt="Logo SmoothUI" width={36} />
+                <Image src={Logo} alt="Logo SmoothUI" width={86} />
               </Link>
               <BadgeBeta />
             </div>
