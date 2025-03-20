@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
         className={`bg-light-50 dark:bg-dark-50 antialiased transition-colors ${asap.variable} ${inter.className}`}
       >

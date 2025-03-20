@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useMemo, useState } from "react"
+import { useMemo, useState } from "react";
 import {
   CloudLightning,
   Phone,
   Thermometer,
   Timer as TimerIcon,
-} from "lucide-react"
-import { AnimatePresence, motion } from "motion/react"
+} from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 // Animation variants remain the same
 const ANIMATION_VARIANTS = {
@@ -17,7 +17,7 @@ const ANIMATION_VARIANTS = {
   "timer-idle": { scale: 0.7, y: -7.5, bounce: 0.3 },
   "idle-timer": { scale: 1.2, y: 5, bounce: 0.3 },
   "idle-ring": { scale: 1.1, y: 3, bounce: 0.5 },
-} as const
+} as const;
 
 const BOUNCE_VARIANTS = {
   idle: 0.5,
@@ -27,19 +27,26 @@ const BOUNCE_VARIANTS = {
   "timer-idle": 0.3,
   "idle-timer": 0.3,
   "idle-ring": 0.5,
-} as const
+} as const;
+
+type Transition = {
+  opacity: number[];
+  filter: string;
+};
 
 const variants = {
-  exit: (transition: { [key: string]: any }) => ({
+  exit: (transition: Transition) => ({
     ...transition,
     opacity: [1, 0],
     filter: "blur(5px)",
   }),
-}
+};
+
+console.log(typeof variants);
 
 // Idle Component with Weather
 const Idle = () => {
-  const [showTemp, setShowTemp] = useState(false)
+  const [showTemp, setShowTemp] = useState(false);
 
   return (
     <motion.div
@@ -76,8 +83,8 @@ const Idle = () => {
         )}
       </AnimatePresence>
     </motion.div>
-  )
-}
+  );
+};
 
 // Ring Component
 const Ring = () => {
@@ -92,19 +99,19 @@ const Ring = () => {
       </div>
       <div className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
     </div>
-  )
-}
+  );
+};
 
 // Timer Component
 const Timer = () => {
-  const [time, setTime] = useState(60)
+  const [time, setTime] = useState(60);
 
   useMemo(() => {
     const timer = setInterval(() => {
-      setTime((t) => (t > 0 ? t - 1 : 0))
-    }, 1000)
-    return () => clearInterval(timer)
-  }, [])
+      setTime((t) => (t > 0 ? t - 1 : 0));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className="flex w-64 items-center gap-3 overflow-hidden px-4 py-2 text-white">
@@ -123,32 +130,32 @@ const Timer = () => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-type View = "idle" | "ring" | "timer"
+type View = "idle" | "ring" | "timer";
 
 export default function DynamicIsland() {
-  const [view, setView] = useState<View>("idle")
+  const [view, setView] = useState<View>("idle");
   const [variantKey, setVariantKey] =
-    useState<keyof typeof BOUNCE_VARIANTS>("idle")
+    useState<keyof typeof BOUNCE_VARIANTS>("idle");
 
   const content = useMemo(() => {
     switch (view) {
       case "ring":
-        return <Ring />
+        return <Ring />;
       case "timer":
-        return <Timer />
+        return <Timer />;
       default:
-        return <Idle />
+        return <Idle />;
     }
-  }, [view])
+  }, [view]);
 
   const handleViewChange = (newView: View) => {
-    if (view === newView) return
-    setVariantKey(`${view}-${newView}` as keyof typeof BOUNCE_VARIANTS)
-    setView(newView)
-  }
+    if (view === newView) return;
+    setVariantKey(`${view}-${newView}` as keyof typeof BOUNCE_VARIANTS);
+    setView(newView);
+  };
 
   return (
     <div className="h-[200px]">
@@ -212,7 +219,9 @@ export default function DynamicIsland() {
               type="button"
               key={v}
               onClick={() => handleViewChange(v as View)}
-              className={`h-10 w-fit cursor-pointer rounded-full bg-white px-10 py-1.5 text-sm font-medium text-gray-900 capitalize ring-1 shadow-xs ring-gray-300/50 ring-inset hover:bg-gray-50 md:w-32 md:px-2.5 ${view === v ? "ring-2 ring-blue-500" : ""} `}
+              className={`h-10 w-fit cursor-pointer rounded-full bg-white px-10 py-1.5 text-sm font-medium text-gray-900 capitalize ring-1 shadow-xs ring-gray-300/50 ring-inset hover:bg-gray-50 md:w-32 md:px-2.5 ${
+                view === v ? "ring-2 ring-blue-500" : ""
+              } `}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               disabled={view === v}
@@ -223,5 +232,5 @@ export default function DynamicIsland() {
         </div>
       </div>
     </div>
-  )
+  );
 }
