@@ -1,5 +1,7 @@
+import Footer from "./components/footer";
 import { ComponentsSlideshow } from "./components/landing/components-slideshow";
 import Divider from "./components/landing/divider";
+import { FAQ } from "./components/landing/faq";
 import { Features } from "./components/landing/features";
 import { Hero } from "./components/landing/hero";
 
@@ -11,6 +13,8 @@ export default function Home() {
       <Hero />
       <Features />
       <ComponentsSlideshow />
+      <FAQ />
+      <Footer />
     </main>
   );
 }
