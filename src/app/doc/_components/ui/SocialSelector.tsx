@@ -11,6 +11,7 @@ export const LinkedinIcon: React.FC<LinkedinIconProps> = ({ className }) => (
   <svg
     width="20"
     height="20"
+    className={className}
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMidYMid"
     viewBox="0 0 256 256"
@@ -34,6 +35,7 @@ export const GmailIcon: React.FC<GmailIconProps> = ({
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 49.4 512 399.42"
     width="1em"
+    className={className}
     height="1em"
     {...props}
   >
@@ -79,6 +81,7 @@ export const GithubIcon: React.FC<GithubIconProps> = ({
     height="1em"
     fill="#fff"
     xmlns="http://www.w3.org/2000/svg"
+    className={className}
     preserveAspectRatio="xMidYMid"
     {...props}
   >
