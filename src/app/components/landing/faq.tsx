@@ -24,8 +24,8 @@ const item = {
 
 const faqs = [
   {
-    question: "Is SmoothUI free to use?",
-    answer: "Yes, SmoothUI is completely free",
+    question: "Is OmarUI free to use?",
+    answer: "Yes, OmarUI is completely free",
   },
   // Add more FAQs...
 ]

@@ -18,6 +18,7 @@ const asap = Asap({
 export const metadata: Metadata = {
   title: "OmarUI",
   description: "A collection of awesome test components with Tailwind CSS",
+  icons: "/logo.svg"
 };
 
 export default function RootLayout({

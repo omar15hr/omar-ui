@@ -22,7 +22,7 @@ interface Order {
 const initialUserData: UserData = {
   name: "John Doe",
   email: "john@example.com",
-  avatar: "https://github.com/educlopez.png",
+  avatar: "https://github.com/omar15hr.png",
 }
 
 const mockOrders: Order[] = [

@@ -1,89 +1,127 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "motion/react"
+import { useState } from "react";
+import { motion } from "motion/react";
 
-interface XIconProps extends React.SVGProps<SVGSVGElement> {
-  className?: string
+interface LinkedinIconProps extends React.SVGProps<SVGSVGElement> {
+  className?: string;
 }
 
-export const XIcon: React.FC<XIconProps> = ({ className, ...props }) => (
+export const LinkedinIcon: React.FC<LinkedinIconProps> = ({
+  className,
+  ...props
+}) => (
   <svg
+    width="20"
+    height="20"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 512 512"
-    className={className}
-    {...props}
+    preserveAspectRatio="xMidYMid"
+    viewBox="0 0 256 256"
   >
-    <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+    <path
+      d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453"
+      fill="#0A66C2"
+    />
   </svg>
-)
+);
 
-interface ThreadsIconProps extends React.SVGProps<SVGSVGElement> {
-  className?: string
+interface GmailIconProps extends React.SVGProps<SVGSVGElement> {
+  className?: string;
 }
 
-export const ThreadsIcon: React.FC<ThreadsIconProps> = ({
+export const GmailIcon: React.FC<GmailIconProps> = ({
   className,
   ...props
 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 448 512"
-    className={className}
+    viewBox="0 49.4 512 399.42"
+    width="1em"
+    height="1em"
     {...props}
   >
-    <path d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z" />
+    <g fill="none" fillRule="evenodd">
+      <g fillRule="nonzero">
+        <path
+          fill="#4285f4"
+          d="M34.91 448.818h81.454V251L0 163.727V413.91c0 19.287 15.622 34.91 34.91 34.91z"
+        />
+        <path
+          fill="#34a853"
+          d="M395.636 448.818h81.455c19.287 0 34.909-15.622 34.909-34.909V163.727L395.636 251z"
+        />
+        <path
+          fill="#fbbc04"
+          d="M395.636 99.727V251L512 163.727v-46.545c0-43.142-49.25-67.782-83.782-41.891z"
+        />
+      </g>
+      <path
+        fill="#ea4335"
+        d="M116.364 251V99.727L256 204.455 395.636 99.727V251L256 355.727z"
+      />
+      <path
+        fill="#c5221f"
+        fillRule="nonzero"
+        d="M0 117.182v46.545L116.364 251V99.727L83.782 75.291C49.25 49.4 0 74.04 0 117.18z"
+      />
+    </g>
   </svg>
-)
+);
 
-interface BskyIconProps extends React.SVGProps<SVGSVGElement> {
-  className?: string
+interface GithubIconProps extends React.SVGProps<SVGSVGElement> {
+  className?: string;
 }
 
-export const BskyIcon: React.FC<BskyIconProps> = ({ className, ...props }) => (
+export const GithubIcon: React.FC<GithubIconProps> = ({
+  className,
+  ...props
+}) => (
   <svg
+    viewBox="0 0 256 250"
+    width="1em"
+    height="1em"
+    fill="#fff"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 512 512"
-    className={className}
+    preserveAspectRatio="xMidYMid"
     {...props}
   >
-    <path d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2c42.1-31.6 110.3-56 110.3 21.8c0 15.5-8.9 130.5-14.1 149.2C478.2 298 412 314.6 353.1 304.5c102.9 17.5 129.1 75.5 72.5 133.5c-107.4 110.2-154.3-27.6-166.3-62.9l0 0c-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8l0 0c-12 35.3-59 173.1-166.3 62.9c-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1C10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z" />
+    <path d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Zm-80.06 182.34c-.282.636-1.283.827-2.194.39-.929-.417-1.45-1.284-1.15-1.922.276-.655 1.279-.838 2.205-.399.93.418 1.46 1.293 1.139 1.931Zm6.296 5.618c-.61.566-1.804.303-2.614-.591-.837-.892-.994-2.086-.375-2.66.63-.566 1.787-.301 2.626.591.838.903 1 2.088.363 2.66Zm4.32 7.188c-.785.545-2.067.034-2.86-1.104-.784-1.138-.784-2.503.017-3.05.795-.547 2.058-.055 2.861 1.075.782 1.157.782 2.522-.019 3.08Zm7.304 8.325c-.701.774-2.196.566-3.29-.49-1.119-1.032-1.43-2.496-.726-3.27.71-.776 2.213-.558 3.315.49 1.11 1.03 1.45 2.505.701 3.27Zm9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033-1.448-.439-2.395-1.613-2.103-2.626.301-1.01 1.747-1.484 3.207-1.028 1.446.436 2.396 1.602 2.095 2.622Zm10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95-1.53.034-2.769-.82-2.786-1.86 0-1.065 1.202-1.932 2.733-1.958 1.522-.03 2.768.818 2.768 1.868Zm10.555-.405c.182 1.03-.875 2.088-2.387 2.37-1.485.271-2.861-.365-3.05-1.386-.184-1.056.893-2.114 2.376-2.387 1.514-.263 2.868.356 3.061 1.403Z" />
   </svg>
-)
+);
 
 interface Platform {
-  name: string
-  domain: string
-  icon: React.ReactNode
-  url: string
+  name: string;
+  domain: string;
+  icon: React.ReactNode;
+  url: string;
 }
 
 const platforms: Platform[] = [
   {
-    name: "X",
-    domain: "x.com",
-    icon: <XIcon className="h-5 w-5" />,
-    url: "https://x.com/educalvolpz",
+    name: "Linkedin",
+    domain: "linkedin.com",
+    icon: <LinkedinIcon className="h-5 w-5" />,
+    url: "https://www.linkedin.com/in/omar-alejandro-hernandez-diaz/",
   },
   {
-    name: "Bluesky",
-    domain: "bsky.app",
-    icon: <BskyIcon className="h-5 w-5" />,
-    url: "https://bsky.app/profile/educalvolpz.bsky.social",
+    name: "Gmail",
+    domain: "gmail.com",
+    icon: <GmailIcon className="h-5 w-5" />,
+    url: "emailto:omarhrn@gmail.com",
   },
   {
-    name: "Threads",
-    domain: "threads.net",
-    icon: <ThreadsIcon className="h-5 w-5" />,
-    url: "https://threads.net/@educalvolpz",
+    name: "Github",
+    domain: "github.com",
+    icon: <GithubIcon className="h-5 w-5" />,
+    url: "https://github.com/omar15hr",
   },
-]
+];
 
 export default function SocialSelector() {
   const [selectedPlatform, setSelectedPlatform] = useState<Platform>(
     platforms[0]
-  )
-  const handle = "educalvolpz"
+  );
+  const handle = "omar-alejandro-hernandez-diaz";
 
   return (
     <div className="mx-auto my-4 w-full max-w-2xl text-center">
@@ -145,10 +183,16 @@ export default function SocialSelector() {
             rel="noopener noreferrer"
             className="text-light-950 dark:text-dark-950 font-medium"
           >
-            @{handle}
+            {selectedPlatform.name === "Linkedin"
+              ? "omar-alejandro-hernandez-diaz"
+              : selectedPlatform.name === "Gmail"
+              ? "omarhrn@gmail.com"
+              : selectedPlatform.name === "Github"
+              ? "omar15hr"
+              : ""}
           </a>
         </p>
       </div>
     </div>
-  )
+  );
 }
