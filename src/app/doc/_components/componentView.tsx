@@ -1,20 +1,12 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-
-import { cn } from "@/app/utils/cn"
+import { cn } from "@/app/utils/cn";
 
 type ComponentViewProps = {
-  isReloadAnimation?: boolean
-} & React.ComponentProps<"div">
+  isReloadAnimation?: boolean;
+} & React.ComponentProps<"div">;
 
 export function ComponentView({ children }: ComponentViewProps) {
-  const [reloadKey, setReloadKey] = useState(0)
-
-  function handleReload() {
-    setReloadKey((prevKey) => prevKey + 1)
-  }
-
   return (
     <div
       className={cn(
@@ -23,5 +15,5 @@ export function ComponentView({ children }: ComponentViewProps) {
     >
       {children}
     </div>
-  )
+  );
 }

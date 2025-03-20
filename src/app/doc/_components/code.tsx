@@ -1,5 +1,5 @@
-// @ts-nocheck
 import { codeToHtml } from "@/app/utils/shiki";
+import { JSX } from "react";
 
 type CodeProps = {
   code: string;

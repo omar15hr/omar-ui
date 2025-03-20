@@ -7,10 +7,7 @@ interface LinkedinIconProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
 }
 
-export const LinkedinIcon: React.FC<LinkedinIconProps> = ({
-  className,
-  ...props
-}) => (
+export const LinkedinIcon: React.FC<LinkedinIconProps> = () => (
   <svg
     width="20"
     height="20"
@@ -72,10 +69,7 @@ interface GithubIconProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
 }
 
-export const GithubIcon: React.FC<GithubIconProps> = ({
-  className,
-  ...props
-}) => (
+export const GithubIcon: React.FC<GithubIconProps> = ({ ...props }) => (
   <svg
     viewBox="0 0 256 250"
     width="1em"
@@ -121,7 +115,6 @@ export default function SocialSelector() {
   const [selectedPlatform, setSelectedPlatform] = useState<Platform>(
     platforms[0]
   );
-  const handle = "omar-alejandro-hernandez-diaz";
 
   return (
     <div className="mx-auto my-4 w-full max-w-2xl text-center">

@@ -20,21 +20,11 @@ export default function Frame({
   clean = false,
 }: FrameProps) {
   const [showCode, setShowCode] = useState(false);
-  const [isCopied, setIsCopied] = useState(false);
 
   const toggleView = () => {
     setShowCode(!showCode);
   };
 
-  const handleCopyCode = async () => {
-    if (component.code) {
-      const success = await copyToClipboard(component.code);
-      if (success) {
-        setIsCopied(true);
-        setTimeout(() => setIsCopied(false), 1000);
-      }
-    }
-  };
 
   return (
     <div

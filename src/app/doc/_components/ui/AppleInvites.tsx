@@ -102,7 +102,7 @@ export default function AppleInvites() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setPage(([prevPage, prevDirection]) => [prevPage + 1, 1])
+      setPage(([prevPage]) => [prevPage + 1, 1])
     }, 3000)
 
     return () => clearInterval(timer)

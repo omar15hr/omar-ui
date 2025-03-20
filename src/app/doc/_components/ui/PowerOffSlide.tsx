@@ -17,10 +17,6 @@ export default function PowerOffSlide() {
   const constraintsRef = useRef(null)
   const textRef: RefObject<HTMLDivElement | null> = useRef(null)
 
-  const xInput = [0, 164]
-  const opacityOutput = [0, 1]
-  const opacity = useTransform(x, xInput, opacityOutput)
-
   useAnimationFrame((t) => {
     const duration = 2000
     const progress = (t % duration) / duration

@@ -1,47 +1,46 @@
-import fs from "fs"
-import path from "path"
-import { promisify } from "util"
-import React from "react"
-import { Metadata } from "next"
-import { notFound } from "next/navigation"
+import fs from "fs";
+import path from "path";
+import { promisify } from "util";
+import React from "react";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-import { Breadcrumbs } from "@/app/doc/_components/breadcrumbs"
-import { CodeBlock } from "@/app/doc/_components/codeBlock"
+import { Breadcrumbs } from "@/app/doc/_components/breadcrumbs";
+import { CodeBlock } from "@/app/doc/_components/codeBlock";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/app/doc/_components/tabs"
-import { components } from "@/app/doc/data/components"
+} from "@/app/doc/_components/tabs";
+import { components } from "@/app/doc/data/components";
 
-import BadgeBeta from "../_components/badgeBeta"
-import { ComponentView } from "../_components/componentView"
-import { CodeBlockWrapper } from "../_components/codeBlockWrapper"
+import { ComponentView } from "../_components/componentView";
+import { CodeBlockWrapper } from "../_components/codeBlockWrapper";
 
 export async function generateStaticParams() {
   const component = components.map((component) => ({
     slug: component.slug,
-  }))
+  }));
 
-  return component
+  return component;
 }
 
-export const dynamicParams = false
+export const dynamicParams = false;
 
 export async function generateMetadata(props: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata | undefined> {
-  const params = await props.params
+  const params = await props.params;
   const component = components.find(
     (component) => component.slug === params.slug
-  )
+  );
 
   if (!component) {
-    return
+    return;
   }
 
-  const { componentTitle, slug } = component
+  const { componentTitle, slug } = component;
 
   return {
     title: componentTitle,
@@ -73,39 +72,41 @@ export async function generateMetadata(props: {
         },
       ],
     },
-  }
+  };
 }
 
 async function readFilePath(filePath: string) {
-  const readFile = promisify(fs.readFile)
+  const readFile = promisify(fs.readFile);
 
-  const fileContent = await readFile(path.join(process.cwd(), filePath), "utf8")
+  const fileContent = await readFile(
+    path.join(process.cwd(), filePath),
+    "utf8"
+  );
 
-  return fileContent
+  return fileContent;
 }
 
 export default async function ComponentPage(props: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }) {
-  const params = await props.params
+  const params = await props.params;
   const component = components.find(
     (component) => component.slug === params.slug
-  )
+  );
 
   if (!component) {
-    notFound()
+    notFound();
   }
 
-  const filePath = `./src/app/doc/_components/ui/${component.componentTitle.replace(/\s+/g, "")}.tsx`
+  const filePath = `./src/app/doc/_components/ui/${component.componentTitle.replace(
+    /\s+/g,
+    ""
+  )}.tsx`;
 
-  const code = await readFilePath(filePath)
+  const code = await readFilePath(filePath);
 
-  const cnPath = `./src/app/utils/cn.ts`
-  const cnCode = await readFilePath(cnPath)
-
-  const currentComponent = components.indexOf(component)
-  const previousComponent = components[currentComponent - 1]
-  const nextComponent = components[currentComponent + 1]
+  const cnPath = `./src/app/utils/cn.ts`;
+  const cnCode = await readFilePath(cnPath);
 
   return (
     <main className="my-2 xl:mb-24">
@@ -220,5 +221,5 @@ export default async function ComponentPage(props: {
         </div>
       </div>
     </main>
-  )
+  );
 }

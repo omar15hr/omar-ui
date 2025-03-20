@@ -21,6 +21,7 @@ const buttonCopy: Button = {
 
 export function CopyCode({ code }: CopyCode) {
   const [copied, setCopied] = useState(false)
+  console.log(copied)
   const [buttonState, setButtonState] = useState<keyof Button>("idle")
 
   const handleClick = useCallback(() => {

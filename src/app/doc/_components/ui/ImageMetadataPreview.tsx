@@ -1,27 +1,29 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image" // Only if you're using nextjs
-import { ChevronUp, CircleX, Share } from "lucide-react"
-import { AnimatePresence, motion } from "motion/react"
-import useMeasure from "react-use-measure"
+import { useState } from "react";
+import Image from "next/image"; // Only if you're using nextjs
+import { ChevronUp, CircleX, Share } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import useMeasure from "react-use-measure";
 
 const arenaOpenCard =
-  "https://images.unsplash.com/photo-1594063596316-aa5f41ceb8dc?=jpg&fit=crop&w=600&q=80&fit=max"
+  "https://images.unsplash.com/photo-1594063596316-aa5f41ceb8dc?=jpg&fit=crop&w=600&q=80&fit=max";
 export default function ImageMetadataPreview() {
-  const [openInfo, setopenInfo] = useState(false)
-  const [height, setHeight] = useState("42px")
-  const [elementRef, bounds] = useMeasure()
+  const [openInfo, setopenInfo] = useState(false);
+  const [height, setHeight] = useState("42px");
+  const [elementRef, bounds] = useMeasure();
+
+  console.log(height);
 
   const handleClickOpen = () => {
-    setHeight(bounds.height.toString())
-    setopenInfo((b) => !b)
-  }
+    setHeight(bounds.height.toString());
+    setopenInfo((b) => !b);
+  };
 
   const handleClickClose = () => {
-    setHeight("42px")
-    setopenInfo((b) => !b)
-  }
+    setHeight("42px");
+    setopenInfo((b) => !b);
+  };
 
   return (
     <div className="absolute bottom-10 flex flex-col items-center justify-center gap-4">
@@ -123,5 +125,5 @@ export default function ImageMetadataPreview() {
         </AnimatePresence>
       </div>
     </div>
-  )
+  );
 }
