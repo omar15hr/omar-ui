@@ -1,35 +1,36 @@
-import AnimatedTags from "@/app/doc/_components/ui/AnimatedTags"
-import AppDownloadStack from "@/app/doc/_components/ui/AppDownloadStack"
-import AppleInvites from "@/app/doc/_components/ui/AppleInvites"
-import ButtonCopy from "@/app/doc/_components/ui/ButtonCopy"
-import DynamicIsland from "@/app/doc/_components/ui/DynamicIsland"
-import ImageMetadataPreview from "@/app/doc/_components/ui/ImageMetadataPreview"
-import InteractiveImageSelector from "@/app/doc/_components/ui/InteractiveImageSelector"
-import JobListingComponent from "@/app/doc/_components/ui/JobListingComponent"
-import MatrixCard from "@/app/doc/_components/ui/MatrixCard"
-import NumberFlow from "@/app/doc/_components/ui/NumberFlow"
-import PowerOffSlide from "@/app/doc/_components/ui/PowerOffSlide"
-import SocialSelector from "@/app/doc/_components/ui/SocialSelector"
-import UserAccountAvatar from "@/app/doc/_components/ui/UserAccountAvatar"
-import FluidMorph from "../_components/ui/FluidMorph"
-import ExpandableCards from "../_components/ui/ExpandableCards"
+import AnimatedTags from "@/app/doc/_components/ui/AnimatedTags";
+import AppDownloadStack from "@/app/doc/_components/ui/AppDownloadStack";
+import AppleInvites from "@/app/doc/_components/ui/AppleInvites";
+import ButtonCopy from "@/app/doc/_components/ui/ButtonCopy";
+import DynamicIsland from "@/app/doc/_components/ui/DynamicIsland";
+import ImageMetadataPreview from "@/app/doc/_components/ui/ImageMetadataPreview";
+import InteractiveImageSelector from "@/app/doc/_components/ui/InteractiveImageSelector";
+import JobListingComponent from "@/app/doc/_components/ui/JobListingComponent";
+import MatrixCard from "@/app/doc/_components/ui/MatrixCard";
+import NumberFlow from "@/app/doc/_components/ui/NumberFlow";
+import PowerOffSlide from "@/app/doc/_components/ui/PowerOffSlide";
+import SocialSelector from "@/app/doc/_components/ui/SocialSelector";
+import UserAccountAvatar from "@/app/doc/_components/ui/UserAccountAvatar";
+import FluidMorph from "../_components/ui/FluidMorph";
+import ExpandableCards from "../_components/ui/ExpandableCards";
+import SharedLayoutAnimation from "../_components/ui/SharedLayoutAnimation";
 
 export interface ComponentsProps {
-  id: number
-  componentTitle: string
-  slug?: string
-  type?: "component" | "block"
-  isNew?: boolean
-  tags: string[]
-  href: string
-  info: string
-  componentUi?: React.ElementType
-  code?: string
-  download?: string
-  customCss?: string
-  cnFunction?: boolean
-  isUpdated?: boolean
-  collection?: string
+  id: number;
+  componentTitle: string;
+  slug?: string;
+  type?: "component" | "block";
+  isNew?: boolean;
+  tags: string[];
+  href: string;
+  info: string;
+  componentUi?: React.ElementType;
+  code?: string;
+  download?: string;
+  customCss?: string;
+  cnFunction?: boolean;
+  isUpdated?: boolean;
+  collection?: string;
 }
 
 export const components: ComponentsProps[] = [
@@ -263,4 +264,24 @@ export const components: ComponentsProps[] = [
     isUpdated: false,
     collection: "notifications",
   },
-]
+  {
+    id: 16,
+    componentTitle: "Shared Layout Animation",
+    slug: "shared-layout-animation",
+    type: "block",
+    isNew: true,
+    tags: ["react", "tailwindcss", "motion"],
+    href: "https://x.com/educalvolpz",
+    info: "This component showcases a shared layout animation with smooth transitions and visual feedback. Users can interact with tabs to switch between different content sections, triggering animations that enhance the user experience.",
+    componentUi: SharedLayoutAnimation,
+    download: "motion lucide-react popmotion",
+    customCss: `//Progressive Blur
+.gradient-mask-t-0 {
+    -webkit-mask-image: linear-gradient(#0000, #000);
+    mask-image: linear-gradient(#0000, #000);
+}`,
+    cnFunction: false,
+    isUpdated: false,
+    collection: "notifications",
+  },
+];
