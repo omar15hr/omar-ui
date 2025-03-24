@@ -60,7 +60,7 @@ export async function generateMetadata(props: {
       ],
     },
     twitter: {
-      title: `SmootUI — ${componentTitle}`,
+      title: `OmarUI — ${componentTitle}`,
       description: `Navigate to ${componentTitle} component, which will make your application smooth.`,
       card: "summary_large_image",
       images: [
@@ -68,7 +68,7 @@ export async function generateMetadata(props: {
           width: 1920,
           height: 1080,
           url: `/api/og?title=${componentTitle}`,
-          alt: "SmoothUI cover",
+          alt: "OmarUI cover",
         },
       ],
     },
