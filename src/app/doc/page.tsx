@@ -75,7 +75,7 @@ export default function GetStartedPage() {
             Installation
           </h2>
           <p className="text-light-900 dark:text-dark-900 text-[16px] leading-relaxed">
-            To use SmoothUI components, you will need to install the following
+            To use OmarUI components, you will need to install the following
             dependencies:
           </p>
 
@@ -150,7 +150,7 @@ export default function GetStartedPage() {
             Color System
           </h2>
           <p className="text-light-900 dark:text-dark-900 text-[16px] leading-relaxed">
-            SmoothUI uses a carefully crafted color system with both light and
+            OmarUI uses a carefully crafted color system with both light and
             dark variants. Add these colors to your tailwind.config.ts:
           </p>
           <CodeBlockWrapper
